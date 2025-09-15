@@ -7,13 +7,14 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
   :root{
-    --hex-w: 160; /* px (JS uses same number) */
+    --hex-w: 150; /* smaller width leaves natural gap */
+    --hex-gap: 6px; /* spacing between hexes */
     --panel-max: 1000px;
   }
   html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;}
   body{background:linear-gradient(180deg,#0f172a 0%, #071033 60%); color:#fff;}
 
-/* hex container base */
+/* hex container */
   #hex-container{
     position:fixed;
     inset:0;
@@ -24,16 +25,16 @@
 
   .hex{
     position:absolute;
-    width:160px;
-    height:138px; /* ~ 0.866 * width */
+    width:var(--hex-w);
+    height:calc(var(--hex-w) * 0.866);
     clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
     background-repeat:no-repeat;
     background-size: cover;
     transition: transform .25s ease, filter .25s ease;
-    filter: brightness(.95);
-    box-shadow: 0 6px 20px rgba(2,6,23,0.6);
+    filter: brightness(.65); /* darken background */
+    box-shadow: 0 4px 10px rgba(2,6,23,0.5);
   }
-  .hex:hover{ transform: scale(1.06); filter: brightness(1.05); z-index:2; }
+  .hex:hover{ transform: scale(1.08); filter: brightness(.9); z-index:2; }
 
 /* content wrapper */
   main{position:relative; z-index:1;}
@@ -130,22 +131,23 @@
 /* build honeycomb hex background */
 (function(){
   const IMG_PATH = 'https://i.imgur.com/5j94M3E.jpg'; // Deadman Wonderland wallpaper
-  const hexW = 160;
+  const hexW = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--hex-w'));
   const hexH = Math.round(hexW * 0.866);
+  const gap = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--hex-gap'));
   const container = document.getElementById('hex-container');
 
   function build(){
     container.innerHTML = '';
     const vw = window.innerWidth;
     const vh = window.innerHeight;
-    const stepX = Math.round(hexW * 0.75);
+    const stepX = Math.round((hexW + gap) * 0.75);
     const cols = Math.ceil(vw / stepX) + 3;
-    const rows = Math.ceil(vh / hexH) + 3;
+    const rows = Math.ceil(vh / (hexH + gap)) + 3;
 
     for(let col = -1; col < cols; col++){
       for(let row = -2; row < rows; row++){
         const x = Math.round(col * stepX);
-        const y = Math.round(row * hexH + ((col % 2) ? hexH/2 : 0));
+        const y = Math.round(row * (hexH + gap) + ((col % 2) ? (hexH+gap)/2 : 0));
         const el = document.createElement('div');
         el.className = 'hex';
         el.style.left = x + 'px';
