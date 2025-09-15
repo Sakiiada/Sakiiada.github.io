@@ -1,120 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>Shiki Microblogy</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial=scale=1">
-		<link rel="stylesheet" href="style.css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-	</head>
-	<body
-			<img src="galaxy.jpeg" width="181.5" height="798" />
-		<div id="layout">
-			<div class="wrapper">
-				<nav>
-				  <input type="checkbox" id="show-search">
-				  <input type="checkbox" id="show-menu">
-				  <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
-				  <div class="content">
-				  <div class="logo"><a href="#">ANIMPEDIA</a></div>
-					<ul class="links">
-					  <li><a href="#">Home</a></li>
-					  <li><a href="about.html">About</a></li>
-					  <li><a href="information.html">Information</a></li>
-					  <li>
-						<a href="#" class="desktop-link">Character List</a>
-						<input type="checkbox" id="show-features">
-						<label for="show-features">Character List</label>
-						<ul>
-						  <li><a href="#">Drop Menu 1</a></li>
-						  <li><a href="#">Drop Menu 2</a></li>
-						  <li><a href="#">Drop Menu 3</a></li>
-						  <li><a href="#">Drop Menu 4</a></li>
-						</ul>
-					  </li>
-					  <li>
-						<a href="#" class="desktop-link">Forum</a>
-						<input type="checkbox" id="show-services">
-						<label for="show-services">Forum</label>
-						<ul>
-						  <li><a href="#">Drop Menu 1</a></li>
-						  <li><a href="#">Drop Menu 2</a></li>
-						  <li><a href="#">Drop Menu 3</a></li>
-						  <li>
-							<a href="#" class="desktop-link">More Items</a>
-							<input type="checkbox" id="show-items">
-							<label for="show-items">More Items</label>
-							<ul>
-							  <li><a href="#">Sub Menu 1</a></li>
-							  <li><a href="#">Sub Menu 2</a></li>
-							  <li><a href="#">Sub Menu 3</a></li>
-							</ul>
-						  </li>
-						</ul>
-					  </li>
-					  <li><a href="#">Feedback</a></li>
-					</ul>
-				  </div>
-				  <label for="show-search" class="search-icon"><i class="fas fa-search"></i></label>
-				  <form action="#" class="search-box">
-					<input type="text" placeholder="Type Something to Search..." required>
-					<button type="submit" class="go-icon"><i class="fas fa-long-arrow-alt-right"></i></button>
-				  </form>
-				</nav>
-			  </div>
-	<div id="wrap">
-		<div id="img.class">
-		</div>
-	<img src="anime-anime-girls-women-with-swords-sword-wallpaper-preview.jpg" width="700" height="300" class="center"/>
-	<h1>PROFIL</h1>
-	<p  style="text-align: justify">Shiki is from Kara no kyoukai created by Kiyoko Nasu. Shiki Ryougi (両儀式, Ryōgi Shiki) is the protagonist of Kara no Kyoukai and the bearer of the Mystic Eyes of Death Perception, allowing her to see death and bring it upon anything "alive" for as long as she can run her knife across its Lines of Death. Hailing from a family of demon hunters, she developed two personalities as per her family's custom. A cold, feminine personality is referred to as "Shiki" and a cheerful, masculine personality called "SHIKI." But she lost SHIKI after a suicide attempt left her in a coma for two years. </p>
-	</div>
-	
-  <footer class="footer">
-		 <div class="container">
-				<div class="row">
-					<div class="footer-col">
-					        <h4>company</h4>
-							<ul>
-									<li><a href="#">about us</a></li>
-									<li><a href="#">out services</a></li>
-									<li><a href="#">privacy policy</a></li>
-									<li><a href="#">affiliate program</a></li>
-							</ul>	
-					</div>
-					<div class="footer-col">
-							<h4>get help</h4>
-							<ul>
-									<li><a href="#">FAQ</a></li>
-									<li><a href="#">shipping</a></li>
-									<li><a href="#">returns</a></li>
-									<li><a href="#">order status</a></li>
-									<li><a href="#">payment options</a></li>
-							</ul>
-					</div>
-					<div class="footer-col">
-							<h4>online shop</h4>
-							<ul>
-									<li><a href="#">watch</a></li>
-									<li><a href="#">bag</a></li>
-									<li><a href="#">shoes</a></li>
-									<li><a href="#">dress</a></li>
-							</ul>
-					</div>
-					<div class="footer-col">
-							<h4>follow us</h4>
-							<div class="social-links">
-									<a href="#"><i class="fab fa-facebook-f"></i></a>
-									<a href="#"><i class="fab fa-twitter"></i></a>
-									<a href="#"><i class="fab fa-instagram"></i></a>
-									<a href="#"><i class="fab fa-linkedin-in"></i></a>
-							</div>
-					 </div>
-			  </div>
-	    </div>
-  </footer>				
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RewaL Cophe Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #0f0f1f;
+      color: #ffffff;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    header h1 {
+      color: #f25c5c;
+      margin: 0;
+    }
+
+    nav a {
+      color: #ffffff;
+      margin-left: 2rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    h2 {
+      color: #f25c5c;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      line-height: 1.6;
+      color: #e0e0e0;
+    }
+
+    .hex-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .hex {
+      width: 200px;
+      aspect-ratio: 1;
+      clip-path: polygon(
+        25% 6.7%, 75% 6.7%,
+        100% 50%, 75% 93.3%,
+        25% 93.3%, 0% 50%
+      );
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .hex img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hex:hover {
+      transform: scale(1.05);
+    }
+
+    .project-title {
+      margin-top: 0.5rem;
+      color: #f25c5c;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .project-desc {
+      text-align: center;
+      margin-top: 0.25rem;
+      color: #e0e0e0;
+      font-size: 0.95rem;
+    }
+
+    .contact {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .contact a {
+      color: #f25c5c;
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .hex-container {
+        gap: 1rem;
+      }
+      .hex {
+        width: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>RewaL Cophe</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <div class="hex-container" style="justify-content: flex-start;">
+      <div class="hex">
+        <img src="images/profile.jpg" alt="Profile">
+      </div>
+    </div>
+    <h2>About Me</h2>
+    <p>Hello! I’m an anime enthusiast and web developer. I love creating visually striking and interactive websites inspired by anime aesthetics.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="hex-container">
+      <div>
+        <div class="hex">
+          <img src="images/anime-gallery.jpg" alt="Anime Gallery">
+        </div>
+        <div class="project-title">Anime Gallery</div>
+        <div class="project-desc">A web app showcasing favorite anime characters with hover animations and responsive grid layout.</div>
+      </div>
+
+      <div>
+        <div class="hex">
+          <img src="images/portfolio-website.jpg" alt="Portfolio Website">
+        </div>
+        <div class="project-title">Portfolio Website</div>
+        <div class="project-desc">A personal portfolio with anime-inspired visuals, floating shapes, and smooth scroll navigation.</div>
+      </div>
+
+      <div>
+        <div class="hex">
+          <img src="images/interactive-ui.jpg" alt="Interactive UI">
+        </div>
+        <div class="project-title">Interactive UI</div>
+        <div class="project-desc">Implemented dynamic UI elements and animations to enhance user experience and engagement.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <p>Feel free to reach out via <a href="mailto:youremail@example.com">email</a> or check my <a href="https://github.com/">GitHub</a>.</p>
+  </section>
 </body>
 </html>
-	
-	
