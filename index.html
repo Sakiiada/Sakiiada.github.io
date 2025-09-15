@@ -3,136 +3,109 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anime Diamond Portfolio</title>
+  <title>Anime Hexagon Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to bottom right, #fce7f3, #e0f2fe);
-      background-attachment: fixed;
+      margin: 0;
+      font-family: sans-serif;
+      color: white;
       overflow-x: hidden;
     }
-    .diamond {
-      width: 200px;
-      height: 200px;
-      transform: rotate(45deg);
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-      transition: transform 0.3s;
+
+    /* === HEX BACKGROUND === */
+    .hex-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("https://i.imgur.com/o1jRScb.jpeg"); /* Deadman Wonderland wallpaper */
+      background-size: cover;
+      background-position: center;
+      z-index: -1;
+      clip-path: polygon(
+        50% 0%, 93% 25%, 93% 75%, 
+        50% 100%, 7% 75%, 7% 25%
+      );
     }
-    .diamond img {
-      width: 300px;
-      height: 300px;
-      object-fit: cover;
-      transform: rotate(-45deg) scale(1.2);
-      position: absolute;
-      top: -50px;
-      left: -50px;
-    }
-    .diamond:hover {
-      transform: rotate(45deg) scale(1.05);
-      z-index: 5;
-    }
-    .overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.4);
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      opacity: 0;
-      transition: opacity 0.3s;
-      transform: rotate(-45deg);
-    }
-    .diamond:hover .overlay {
-      opacity: 1;
-    }
-    .grid-diamond {
+
+    .hex-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 60px;
-      justify-items: center;
-      padding: 3rem;
+      grid-template-columns: repeat(auto-fill, 120px);
+      grid-gap: 10px;
+      justify-content: center;
+      padding: 50px 0;
+    }
+
+    .hex {
+      width: 120px;
+      height: 140px;
+      background: inherit;
+      clip-path: polygon(
+        50% 0%, 93% 25%, 93% 75%, 
+        50% 100%, 7% 75%, 7% 25%
+      );
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* === SCENIC PANELS === */
+    .panel {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 60px 0;
+    }
+
+    .panel img {
+      width: 80%;
+      max-width: 1000px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    }
+
+    .left {
+      justify-content: flex-start;
+      margin-left: 5%;
+    }
+
+    .right {
+      justify-content: flex-end;
+      margin-right: 5%;
     }
   </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="p-6 flex justify-between items-center bg-white/70 backdrop-blur-md sticky top-0 shadow-md z-10">
-    <h1 class="text-2xl font-bold text-pink-600">🌸 Anime Portfolio</h1>
-    <ul class="flex gap-6">
-      <li><a href="#about" class="hover:text-pink-600">About</a></li>
-      <li><a href="#projects" class="hover:text-pink-600">Projects</a></li>
-      <li><a href="#contact" class="hover:text-pink-600">Contact</a></li>
-    </ul>
-  </nav>
+  <!-- HEX BACKGROUND -->
+  <div class="hex-grid">
+    <!-- Repeat hex cells to fill screen -->
+    <div class="hex"></div>
+    <div class="hex"></div>
+    <div class="hex"></div>
+    <div class="hex"></div>
+    <div class="hex"></div>
+    <div class="hex"></div>
+    <div class="hex"></div>
+    <div class="hex"></div>
+    <div class="hex"></div>
+    <div class="hex"></div>
+    <div class="hex"></div>
+    <div class="hex"></div>
+  </div>
 
-  <!-- Hero -->
-  <section class="text-center py-16">
-    <h2 class="text-5xl font-bold text-pink-700">Anime Diamond Portfolio ✨</h2>
-    <p class="mt-4 text-lg max-w-2xl mx-auto">
-      Featuring vibes from <span class="text-pink-600 font-semibold">Horimiya</span>, 
-      <span class="text-pink-600 font-semibold">Darling in the FranXX</span>, 
-      <span class="text-pink-600 font-semibold">Deadman Wonderland</span>, 
-      and <span class="text-pink-600 font-semibold">No Game No Life</span>.
-    </p>
-  </section>
-
-  <!-- Diamond Grid -->
-  <section id="projects" class="py-10">
-    <div class="grid-diamond">
-      <!-- Horimiya -->
-      <div class="diamond">
-        <img src="https://i.imgur.com/0kR8o7O.jpeg" alt="Horimiya">
-        <div class="overlay">Horimiya ✨</div>
-      </div>
-
-      <!-- Darling in the FranXX -->
-      <div class="diamond">
-        <img src="https://i.imgur.com/FFn7gS8.jpeg" alt="Darling in the FranXX">
-        <div class="overlay">Darling in the FranXX 💖</div>
-      </div>
-
-      <!-- Deadman Wonderland -->
-      <div class="diamond">
-        <img src="https://i.imgur.com/o1jRScb.jpeg" alt="Deadman Wonderland">
-        <div class="overlay">Deadman Wonderland 🔥</div>
-      </div>
-
-      <!-- No Game No Life -->
-      <div class="diamond">
-        <img src="https://i.imgur.com/yW8Ckfy.jpeg" alt="No Game No Life">
-        <div class="overlay">No Game No Life 🎲</div>
-      </div>
+  <!-- PANELS -->
+  <section>
+    <div class="panel left">
+      <img src="https://i.imgur.com/FFn7gS8.jpeg" alt="Darling in the FranXX scenic panel">
+    </div>
+    <div class="panel right">
+      <img src="https://i.imgur.com/0kR8o7O.jpeg" alt="Horimiya scenic panel">
+    </div>
+    <div class="panel left">
+      <img src="https://i.imgur.com/VwMxw4q.jpeg" alt="Toradora scenic panel">
     </div>
   </section>
-
-  <!-- About -->
-  <section id="about" class="py-16 px-6 max-w-5xl mx-auto text-center">
-    <h3 class="text-3xl font-bold mb-6 text-pink-600">About Me</h3>
-    <p class="bg-white/80 p-6 rounded-2xl shadow-lg">
-      I’m a developer who loves anime aesthetics. My work is inspired by worlds like 
-      <em>Horimiya</em>’s warmth, <em>Darling in the FranXX</em>’s futuristic vibes,
-      <em>Deadman Wonderland</em>’s intensity, and <em>No Game No Life</em>’s colors.
-    </p>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="py-16 px-6 max-w-4xl mx-auto text-center">
-    <h3 class="text-3xl font-bold mb-6 text-pink-600">Contact</h3>
-    <div class="bg-white/80 p-6 rounded-2xl shadow-lg">
-      <p>Want to collaborate? 💌</p>
-      <p class="mt-2">Email: <a href="mailto:youremail@example.com" class="text-pink-600 hover:underline">youremail@example.com</a></p>
-      <p class="mt-2">GitHub: <a href="https://github.com/yourusername" class="text-pink-600 hover:underline">@yourusername</a></p>
-    </div>
-  </section>
-
-  <footer class="text-center py-6 text-sm text-gray-500">
-    © 2025 Anime Diamond Portfolio 🌸
-  </footer>
 </body>
 </html>
