@@ -18,29 +18,29 @@
     position:fixed;
     inset:0;
     z-index:0;
-    pointer-events:none; /* let clicks go through */
+    pointer-events:none;
     overflow:hidden;
   }
 
   .hex{
     position:absolute;
-    width:160px;               /* overwritten in JS for matching math */
-    height:138px;              /* ~ 0.866 * width */
+    width:160px;
+    height:138px; /* ~ 0.866 * width */
     clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
     background-repeat:no-repeat;
-    background-size: cover; /* overwritten per-tile to match viewport */
+    background-size: cover;
     transition: transform .25s ease, filter .25s ease;
     filter: brightness(.95);
     box-shadow: 0 6px 20px rgba(2,6,23,0.6);
   }
   .hex:hover{ transform: scale(1.06); filter: brightness(1.05); z-index:2; }
 
-/* content wrapper sits on top */
+/* content wrapper */
   main{position:relative; z-index:1;}
 
 /* navbar */
   nav{backdrop-filter: blur(6px); background: rgba(255,255,255,0.04); padding:18px 28px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:3;}
-  nav h1{margin:0; font-weight:700; color:#ffd6e3; letter-spacing:.4px;}
+  nav h1{margin:0; font-weight:700; color:#ffd6e3;}
   nav a{color:rgba(255,255,255,0.9); margin-left:18px; text-decoration:none; font-weight:600; font-size:14px;}
 
 /* hero */
@@ -71,7 +71,7 @@
 </style>
 </head>
 <body>
-  <!-- hex background (JS will populate hex tiles inside) -->
+  <!-- HEX BACKGROUND -->
   <div id="hex-container" aria-hidden="true"></div>
 
   <main>
@@ -85,32 +85,41 @@
     </nav>
 
     <section class="hero" id="about">
-      <h2>Hexagon background • scenic panels</h2>
+      <h2>Hexagon background • Scenic Panels</h2>
       <p>
-        Background is a honeycomb made of hex tiles showing a Deadman Wonderland wallpaper.
-        Scenic rectangular panels (Darling in the FranXX, Horimiya, Toradora) alternate left → right → left.
+        Deadman Wonderland honeycomb background, with panels alternating left ↔ right:
+        Darling in the FranXX, Horimiya, Toradora.
       </p>
     </section>
 
-    <!-- panels (replace filenames with your images in /assets/images/) -->
-    <section id="projects" aria-label="scenic-panels">
+    <!-- PANELS -->
+    <section id="projects">
       <div class="panel left">
-        <div class="panel-inner"><img src="assets/images/darling.jpg" alt="Darling in the FranXX scenic"></div>
+        <div class="panel-inner">
+          <img src="https://i.imgur.com/fM6GmRL.jpg" alt="Darling in the FranXX">
+        </div>
       </div>
 
       <div class="panel right">
-        <div class="panel-inner"><img src="assets/images/horimiya.jpg" alt="Horimiya scenic"></div>
+        <div class="panel-inner">
+          <img src="https://i.imgur.com/TS0N53y.jpg" alt="Horimiya">
+        </div>
       </div>
 
       <div class="panel left">
-        <div class="panel-inner"><img src="assets/images/toradora.jpg" alt="Toradora scenic"></div>
+        <div class="panel-inner">
+          <img src="https://i.imgur.com/bn7fLhX.jpg" alt="Toradora">
+        </div>
       </div>
     </section>
 
     <section id="contact" style="text-align:center;padding:40px 20px;">
       <div style="display:inline-block;background:rgba(255,255,255,0.03);padding:22px;border-radius:12px;">
         <strong>Contact</strong>
-        <div style="margin-top:8px;color:rgba(255,255,255,0.85)">youremail@example.com • <a href="https://github.com/yourusername" style="color:#ffd6e3">github.com/yourusername</a></div>
+        <div style="margin-top:8px;color:rgba(255,255,255,0.85)">
+          youremail@example.com • 
+          <a href="https://github.com/yourusername" style="color:#ffd6e3">github.com/yourusername</a>
+        </div>
       </div>
     </section>
 
@@ -118,5 +127,42 @@
   </main>
 
 <script>
-/*
-  JS generate
+/* build honeycomb hex background */
+(function(){
+  const IMG_PATH = 'https://i.imgur.com/5j94M3E.jpg'; // Deadman Wonderland wallpaper
+  const hexW = 160;
+  const hexH = Math.round(hexW * 0.866);
+  const container = document.getElementById('hex-container');
+
+  function build(){
+    container.innerHTML = '';
+    const vw = window.innerWidth;
+    const vh = window.innerHeight;
+    const stepX = Math.round(hexW * 0.75);
+    const cols = Math.ceil(vw / stepX) + 3;
+    const rows = Math.ceil(vh / hexH) + 3;
+
+    for(let col = -1; col < cols; col++){
+      for(let row = -2; row < rows; row++){
+        const x = Math.round(col * stepX);
+        const y = Math.round(row * hexH + ((col % 2) ? hexH/2 : 0));
+        const el = document.createElement('div');
+        el.className = 'hex';
+        el.style.left = x + 'px';
+        el.style.top = y + 'px';
+        el.style.width = hexW + 'px';
+        el.style.height = hexH + 'px';
+        el.style.backgroundImage = `url("${IMG_PATH}")`;
+        el.style.backgroundSize = `${vw}px ${vh}px`;
+        el.style.backgroundPosition = `-${x}px -${y}px`;
+        container.appendChild(el);
+      }
+    }
+  }
+  let to;
+  build();
+  window.addEventListener('resize', ()=>{ clearTimeout(to); to = setTimeout(build,120); });
+})();
+</script>
+</body>
+</html>
