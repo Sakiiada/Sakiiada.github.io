@@ -3,10 +3,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Saki's About Me</title>
+    <title>Foxes, Anime & Chaos</title>
     <meta name="description" content="An anime-inspired 'About Me' page." />
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Kanit:wght@400;700&display=swap" rel="stylesheet">
+      <!-- Favicon -->
+<link rel="icon" href="favicon.ico" />
     <style>
       :root {
         --bg: #1a1a1a;
@@ -261,27 +263,27 @@
         <!-- MAIN -->
         <main>
           <section class="card section about">
-            <h2>About Me</h2>
-            <p class="about-text">Hi! I'm <strong>Your Name</strong> — I make pixel art, watch too much anime, and write small stories inspired by my favorite shows. I love colorful sunsets, lo-fi beats, and characters with messy hair. This site is a tiny anime shrine where I share who I am through images, lists, and small bits of writing. </p>
+            <h2>About Sakiada</h2>
+            <p class="about-text">Ello, <strong>Saki</strong> here. I make goofy shit, watch too much anime, and fuck around with friends in games. I love Arctix Foxes, Cherry Blossoms, and Music + Anime(OBV). This site is just a short little "About Me" lol. </p>
           </section>
           <section class="card section">
             <h2>Favorites</h2>
             <div class="fav-list">
               <div class="fav-item">
                 <strong>Anime:</strong>
-                <br>Your Top Anime
+                <br>SAO, The Ancient Magus' Bride, Horimiya.
               </div>
               <div class="fav-item">
                 <strong>Manga:</strong>
-                <br>Your Top Manga
+                <br>Hero Killer
               </div>
               <div class="fav-item">
                 <strong>Song:</strong>
-                <br>Favorite Track
+                <br>soda stream sky by Powfu
               </div>
               <div class="fav-item">
                 <strong>Food:</strong>
-                <br>Ramen
+                <br>Ranch & Bacon Pasta.
               </div>
             </div>
           </section>
@@ -298,13 +300,14 @@
           </section>
           <section class="card section">
             <h2>Contact</h2>
-            <form class="contact-form" onsubmit="event.preventDefault();alert('Thanks! Replace this with real form handling.');">
-              <input type="text" placeholder="Your name" required>
-              <input type="email" placeholder="Your email" required>
-              <textarea rows="4" placeholder="A short message"></textarea>
+            <form action="https://formspree.io/f/xjkakwzp" method="POST" class="contact-form">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="email" name="email" placeholder="Your email" required>
+              <textarea name="message" rows="4" placeholder="A short message"></textarea>
               <div style="display:flex;gap:10px;align-items:center;margin-top:6px">
                 <button class="btn" type="submit">Send</button>
-                <div style="color:var(--muted);font-size:13px">Or add me on socials: <strong>@yourhandle</strong>
+                <div style="color:var(--muted);font-size:13px">
+                  Or add me on socials: <strong>@sakiada</strong>
                 </div>
               </div>
             </form>
@@ -315,6 +318,3 @@
     </div>
   </body>
 </html>
-
-
-
