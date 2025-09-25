@@ -1,170 +1,347 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RewaL Cophe Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #0f0f1f;
-      color: #ffffff;
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-    }
-
-    header h1 {
-      color: #f25c5c;
-      margin: 0;
-    }
-
-    nav a {
-      color: #ffffff;
-      margin-left: 2rem;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    section {
-      max-width: 1000px;
-      margin: 3rem auto;
-      padding: 0 2rem;
-    }
-
-    h2 {
-      color: #f25c5c;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      line-height: 1.6;
-      color: #e0e0e0;
-    }
-
-    .hex-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-      margin-top: 2rem;
-    }
-
-    .hex {
-      width: 200px;
-      aspect-ratio: 1;
-      clip-path: polygon(
-        25% 6.7%, 75% 6.7%,
-        100% 50%, 75% 93.3%,
-        25% 93.3%, 0% 50%
-      );
-      overflow: hidden;
-      transition: transform 0.3s ease;
-    }
-
-    .hex img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .hex:hover {
-      transform: scale(1.05);
-    }
-
-    .project-title {
-      margin-top: 0.5rem;
-      color: #f25c5c;
-      font-weight: bold;
-      text-align: center;
-    }
-
-    .project-desc {
-      text-align: center;
-      margin-top: 0.25rem;
-      color: #e0e0e0;
-      font-size: 0.95rem;
-    }
-
-    .contact {
-      text-align: center;
-      margin-top: 3rem;
-    }
-
-    .contact a {
-      color: #f25c5c;
-      text-decoration: none;
-    }
-
-    @media (max-width: 768px) {
-      .hex-container {
-        gap: 1rem;
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Saki's About Me</title>
+    <meta name="description" content="An anime-inspired 'About Me' page." />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Kanit:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --bg: #0f1724;
+        /* deep navy */
+        --glass: rgba(255, 255, 255, 0.06);
+        --accent: #ff6b6b;
+        /* coral */
+        --accent-2: #7c5cff;
+        /* violet */
+        --muted: #a3b0c3;
       }
-      .hex {
-        width: 150px;
+
+      * {
+        box-sizing: border-box
       }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>RewaL Cophe</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
 
-  <section id="about">
-    <div class="hex-container" style="justify-content: flex-start;">
-      <div class="hex">
-        <img src="images/profile.jpg" alt="Profile">
+      html,
+      body {
+        height: 100%
+      }
+
+      body {
+        margin: 0;
+        font-family: Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        background: radial-gradient(1200px 600px at 10% 10%, rgba(124, 92, 255, 0.08), transparent), radial-gradient(900px 500px at 90% 90%, rgba(255, 107, 107, 0.06), transparent), var(--bg);
+        color: #e6eef8;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        padding: 40px 20px;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      /* Header */
+      header {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+        margin-bottom: 28px;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .logo .avatar {
+        width: 96px;
+        height: 96px;
+        border-radius: 18px;
+        overflow: hidden;
+        flex-shrink: 0;
+        border: 2px solid rgba(255, 255, 255, 0.06);
+        background: linear-gradient(135deg, var(--accent), var(--accent-2));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 28px;
+        color: #081123;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      }
+
+      h1 {
+        font-family: Kanit, Montserrat, sans-serif;
+        margin: 0;
+        font-size: 28px
+      }
+
+      p.lead {
+        color: var(--muted);
+        margin: 6px 0 0;
+        font-size: 14px
+      }
+
+      /* Layout */
+      .grid {
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        gap: 24px;
+        align-items: start
+      }
+
+      /* Sidebar card */
+      .card {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+        border-radius: 14px;
+        padding: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+      }
+
+      .profile-photo {
+        width: 100%;
+        height: 220px;
+        border-radius: 12px;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+        border: 1px solid rgba(255, 255, 255, 0.03)
+      }
+
+      .meta {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 12px
+      }
+
+      .meta .row {
+        display: flex;
+        justify-content: space-between;
+        font-size: 13px;
+        color: var(--muted)
+      }
+
+      /* Main content */
+      .main .section {
+        margin-bottom: 20px
+      }
+
+      .section h2 {
+        margin: 0 0 10px;
+        font-size: 18px;
+        font-family: Kanit
+      }
+
+      .about-text {
+        color: #dfe9f8;
+        line-height: 1.6
+      }
+
+      /* Interests badges */
+      .badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px
+      }
+
+      .badge {
+        background: var(--glass);
+        padding: 8px 12px;
+        border-radius: 999px;
+        font-size: 13px;
+        color: var(--muted);
+        border: 1px solid rgba(255, 255, 255, 0.02)
+      }
+
+      /* Favorites list */
+      .fav-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px
+      }
+
+      .fav-item {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.015), rgba(255, 255, 255, 0.01));
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        font-size: 13px
+      }
+
+      /* Gallery */
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px
+      }
+
+      .gallery img {
+        width: 100%;
+        height: 90px;
+        object-fit: cover;
+        border-radius: 8px
+      }
+
+      /* Contact */
+      .contact-form {
+        display: grid;
+        gap: 8px
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.04);
+        padding: 10px;
+        border-radius: 8px;
+        color: inherit
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 10px 16px;
+        border-radius: 10px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        color: #071028;
+        border: none;
+        font-weight: 700;
+        cursor: pointer
+      }
+
+      /* Footer */
+      footer {
+        margin-top: 30px;
+        color: var(--muted);
+        font-size: 13px;
+        text-align: center
+      }
+
+      /* small screens */
+      @media (max-width:880px) {
+        .grid {
+          grid-template-columns: 1fr
+        }
+
+        .profile-photo {
+          height: 180px
+        }
+
+        .gallery {
+          grid-template-columns: repeat(2, 1fr)
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">
+          <div class="avatar">YN</div>
+          <div>
+            <h1>Saki's Anime Themed About Me</h1>
+            <p class="lead">A small, anime-styled corner of the web that tells my story ✦</p>
+          </div>
+        </div>
+      </header>
+      <div class="grid">
+        <!-- SIDEBAR -->
+        <aside class="card">
+          <!-- Replace the URL below with your wallpaper or profile image -->
+          <div class="profile-photo" style="background-image:url('https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder');"></div>
+          <div class="meta">
+            <div style="display:flex;align-items:center;justify-content:space-between;">
+              <div>
+                <div style="font-weight:700;font-size:16px">Your Name</div>
+                <div style="font-size:13px;color:var(--muted)">Player · Artist · Dreamer</div>
+              </div>
+              <div style="text-align:right;color:var(--muted);font-size:13px"> Age 16 <br> July, 21st. </div>
+            </div>
+            <div class="row">
+              <span>Favorite Anime</span>
+              <strong>Darling in the FranXX</strong>
+            </div>
+            <div class="row">
+              <span>Pronouns</span>
+              <strong>He/Him</strong>
+            </div>
+            <div class="row">
+              <span>Skills</span>
+              <strong>Drawing · Pixel Art</strong>
+            </div>
+          </div>
+          <hr style="margin:12px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)">
+          <div>
+            <h3 style="margin:0 0 8px;font-size:15px">Interests</h3>
+            <div class="badges">
+              <span class="badge">Anime</span>
+              <span class="badge">Game Dev</span>
+              <span class="badge">Music</span>
+              <span class="badge">Drawing</span>
+              <span class="badge">Cosplay</span>
+              <span class="badge">Foxes</span>
+            </div>
+          </div>
+        </aside>
+        <!-- MAIN -->
+        <main class="main">
+          <section class="card section about">
+            <h2>About Me</h2>
+            <p class="about-text">Hi! I'm <strong>Your Name</strong> — I make pixel art, watch too much anime, and write small stories inspired by my favorite shows. I love colorful sunsets, lo-fi beats, and characters with messy hair. This site is a tiny anime shrine where I share who I am through images, lists, and small bits of writing. </p>
+          </section>
+          <section class="card section">
+            <h2>Favorites</h2>
+            <div class="fav-list">
+              <div class="fav-item">
+                <strong>Anime:</strong>
+                <br> Your Top Anime
+              </div>
+              <div class="fav-item">
+                <strong>Manga:</strong>
+                <br> Your Top Manga
+              </div>
+              <div class="fav-item">
+                <strong>Song:</strong>
+                <br> Favorite Track
+              </div>
+              <div class="fav-item">
+                <strong>Food:</strong>
+                <br> Ramen
+              </div>
+            </div>
+          </section>
+          <section class="card section">
+            <h2>Gallery</h2>
+            <div class="gallery">
+              <img alt="gallery-1" src="https://images.unsplash.com/photo-1506086679524-0d76de3b8c92?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder">
+              <img alt="gallery-2" src="https://images.unsplash.com/photo-1518972559570-1ec4a317b6f4?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder">
+              <img alt="gallery-3" src="https://images.unsplash.com/photo-1514820720301-5f73c7d14b2c?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder">
+              <img alt="gallery-4" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder">
+              <img alt="gallery-5" src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder">
+              <img alt="gallery-6" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder">
+            </div>
+          </section>
+          <section class="card section">
+            <h2>Contact</h2>
+            <form class="contact-form" onsubmit="event.preventDefault();alert('Thanks! Replace this with real form handling.');">
+              <input type="text" placeholder="Your name" required>
+              <input type="email" placeholder="Your email" required>
+              <textarea rows="4" placeholder="A short message"></textarea>
+              <div style="display:flex;gap:10px;align-items:center;margin-top:6px">
+                <button class="btn" type="submit">Send</button>
+                <div style="color:var(--muted);font-size:13px">Or add me on socials: <strong>@yourhandle</strong>
+                </div>
+              </div>
+            </form>
+          </section>
+        </main>
       </div>
+      <footer> Meowing For Clout. </footer>
     </div>
-    <h2>About Me</h2>
-    <p>Hello! I’m an anime enthusiast and web developer. I love creating visually striking and interactive websites inspired by anime aesthetics.</p>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="hex-container">
-      <div>
-        <div class="hex">
-          <img src="images/anime-gallery.jpg" alt="Anime Gallery">
-        </div>
-        <div class="project-title">Anime Gallery</div>
-        <div class="project-desc">A web app showcasing favorite anime characters with hover animations and responsive grid layout.</div>
-      </div>
-
-      <div>
-        <div class="hex">
-          <img src="images/portfolio-website.jpg" alt="Portfolio Website">
-        </div>
-        <div class="project-title">Portfolio Website</div>
-        <div class="project-desc">A personal portfolio with anime-inspired visuals, floating shapes, and smooth scroll navigation.</div>
-      </div>
-
-      <div>
-        <div class="hex">
-          <img src="images/interactive-ui.jpg" alt="Interactive UI">
-        </div>
-        <div class="project-title">Interactive UI</div>
-        <div class="project-desc">Implemented dynamic UI elements and animations to enhance user experience and engagement.</div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <p>Feel free to reach out via <a href="mailto:youremail@example.com">email</a> or check my <a href="https://github.com/">GitHub</a>.</p>
-  </section>
-</body>
+  </body>
 </html>
