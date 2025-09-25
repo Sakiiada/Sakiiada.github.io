@@ -235,14 +235,47 @@
         .gallery {
           grid-template-columns: repeat(2, 1fr)
         }
-      }
+      } 
+      /* Polaroid style */
+.polaroid {
+  width: 180px; /* Adjust size */
+  padding: 10px 10px 25px 10px;
+  background: white;
+  color: #333;
+  border-radius: 8px;
+  box-shadow: 4px 6px 18px rgba(0,0,0,0.5);
+  text-align: center;
+  margin: 16px auto 0 auto; /* Centers below Interests */
+  transform: rotate(-2deg);
+  transition: transform 0.3s;
+}
+
+.polaroid:hover {
+  transform: rotate(0deg) scale(1.05); /* Slight hover animation */
+}
+
+.polaroid img {
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+}
+
+.polaroid .caption {
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+}
+
     </style>
   </head>
   <body>
     <div class="container">
       <header>
         <div class="logo">
-          <div class="avatar">YN</div>
+          <div class="avatar">
+            <img src="images/avatar.jpg" alt="Icon" style="width: 100%; height: 100%; border-radius: 18px;"> 
+            </div>
           <div>
             <h1>Saki's Anime Themed About Me</h1>
             <p class="lead">A small, anime-styled corner of the web that tells my story ✦</p>
@@ -287,6 +320,11 @@
               <span class="badge">Foxes</span>
             </div>
           </div>
+          <!-- Polaroid Photo -->
+        <div class="polaroid">
+          <img src="images/polaroid.png" alt="Polaroid Photo">
+          <div class="caption">polaroid</div>
+         </div>
         </aside>
         <!-- MAIN -->
         <main class="main">
@@ -345,5 +383,6 @@
     </div>
   </body>
 </html>
+
 
 
