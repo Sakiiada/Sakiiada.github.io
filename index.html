@@ -16,9 +16,7 @@
         --text: #fff;
       }
 
-      * {
-        box-sizing: border-box;
-      }
+      * { box-sizing: border-box; }
 
       body {
         margin: 0;
@@ -28,15 +26,13 @@
         padding: 20px;
       }
 
-      .container {
-        max-width: 1000px;
-        margin: 0 auto;
-      }
+      .container { max-width: 1000px; margin: 0 auto; }
 
       header {
         display: flex;
-        gap: 16px;
+        justify-content: center; /* center the whole header horizontally */
         align-items: center;
+        gap: 16px;
         margin-bottom: 24px;
       }
 
@@ -48,10 +44,12 @@
         flex-shrink: 0;
       }
 
-      .avatar img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+      .avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+      .header-text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* text aligns left next to the icon */
       }
 
       h1 {
@@ -60,17 +58,9 @@
         font-size: 24px;
       }
 
-      p.lead {
-        color: var(--muted);
-        font-size: 14px;
-        margin: 4px 0 0;
-      }
+      p.lead { color: var(--muted); font-size: 14px; margin: 4px 0 0; }
 
-      .grid {
-        display: flex;
-        gap: 20px;
-        align-items: start;
-      }
+      .grid { display: flex; gap: 20px; align-items: start; }
 
       .sidebar {
         flex: 0 0 300px;
@@ -100,12 +90,7 @@
         margin-top: 12px;
       }
 
-      .meta .row {
-        display: flex;
-        justify-content: space-between;
-        font-size: 13px;
-        color: var(--muted);
-      }
+      .meta .row { display: flex; justify-content: space-between; font-size: 13px; color: var(--muted); }
 
       .badges {
         display: flex;
@@ -138,16 +123,9 @@
         flex-direction: column;
       }
 
-      .polaroid-vertical img {
-        width: 100%;
-        height: auto;
-      }
+      .polaroid-vertical img { width: 100%; height: auto; }
 
-      .caption {
-        padding: 6px;
-        font-size: 12px;
-        color: #333;
-      }
+      .caption { padding: 6px; font-size: 12px; color: #333; }
 
       main {
         flex: 1;
@@ -162,9 +140,7 @@
         font-size: 18px;
       }
 
-      .about-text {
-        line-height: 1.5;
-      }
+      .about-text { line-height: 1.5; }
 
       .fav-list {
         display: grid;
@@ -185,12 +161,7 @@
         gap: 8px;
       }
 
-      .gallery img {
-        width: 100%;
-        height: 90px;
-        object-fit: cover;
-        border-radius: 6px;
-      }
+      .gallery img { width: 100%; height: 90px; object-fit: cover; border-radius: 6px; }
 
       .contact-form {
         display: flex;
@@ -225,17 +196,9 @@
       }
 
       @media(max-width: 880px) {
-        .grid {
-          flex-direction: column;
-        }
-
-        .gallery {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        .profile-photo {
-          height: 180px;
-        }
+        .grid { flex-direction: column; }
+        .gallery { grid-template-columns: repeat(2, 1fr); }
+        .profile-photo { height: 180px; }
       }
     </style>
   </head>
@@ -243,9 +206,9 @@
     <div class="container">
       <header>
         <div class="avatar">
-          <img src="images/avatar.jpg" alt="Avatar">
+          <img src="https://media.tenor.com/bwg8cfcYzk4AAAAj/skitty-pokemon.gif" alt="Avatar">
         </div>
-        <div>
+        <div class="header-text">
           <h1>Saki's Anime Themed About Me</h1>
           <p class="lead">A small, anime-styled corner of the web that tells my story ✦</p>
         </div>
@@ -290,8 +253,8 @@
           <!-- POLAROID BELOW INTERESTS -->
           <aside class="polaroid-card">
             <div class="polaroid-vertical">
-              <img src="ihttps://i.imgur.com/vLuaSXW.png" alt="Polaroid Photo">
-              <div class="caption">My Polaroid</div>
+              <img src="images/polaroid.jpg" alt="Polaroid Photo">
+              <div class="caption">BLOW MY BRAINS ON THE WALL</div>
             </div>
           </aside>
         </div>
@@ -325,12 +288,12 @@
           <section class="card section">
             <h2>Gallery</h2>
             <div class="gallery">
-              <img alt="gallery-1" src="images/gallery1.png">
-              <img alt="gallery-2" src="images/gallery2.png">
-              <img alt="gallery-3" src="images/gallery3.png">
-              <img alt="gallery-4" src="images/gallery4.png">
-              <img alt="gallery-5" src="images/gallery5.png">
-              <img alt="gallery-6" src="images/gallery6.png">
+              <img alt="gallery-1" src="images/gallerphoto1.jpg">
+              <img alt="gallery-2" src="images/gallerphoto2.jpg">
+              <img alt="gallery-3" src="images/gallerphoto3.jpg">
+              <img alt="gallery-4" src="images/gallerphoto4.jpg">
+              <img alt="gallery-5" src="images/gallerphoto5.jpg">
+              <img alt="gallery-6" src="images/gallerphoto6.jpg">
             </div>
           </section>
           <section class="card section">
