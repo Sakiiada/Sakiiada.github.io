@@ -9,33 +9,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Kanit:wght@400;700&display=swap" rel="stylesheet">
     <style>
       :root {
-        --bg: #0f1724;
-        /* deep navy */
-        --glass: rgba(255, 255, 255, 0.06);
+        --bg: #1a1a1a;
+        --card-bg: #2a2a2a;
         --accent: #ff6b6b;
-        /* coral */
-        --accent-2: #7c5cff;
-        /* violet */
-        --muted: #a3b0c3;
+        --muted: #ccc;
+        --text: #fff;
       }
 
       * {
-        box-sizing: border-box
-      }
-
-      html,
-      body {
-        height: 100%
+        box-sizing: border-box;
       }
 
       body {
         margin: 0;
-        font-family: Montserrat, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-        background: radial-gradient(1200px 600px at 10% 10%, rgba(124, 92, 255, 0.08), transparent), radial-gradient(900px 500px at 90% 90%, rgba(255, 107, 107, 0.06), transparent), var(--bg);
-        color: #e6eef8;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        padding: 40px 20px;
+        font-family: Montserrat, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        padding: 20px;
       }
 
       .container {
@@ -43,280 +33,250 @@
         margin: 0 auto;
       }
 
-      /* Header */
       header {
         display: flex;
-        gap: 24px;
+        gap: 16px;
         align-items: center;
-        margin-bottom: 28px;
+        margin-bottom: 24px;
       }
 
-      .logo {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-
-      .logo .avatar {
-        width: 96px;
-        height: 96px;
-        border-radius: 18px;
+      .avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 12px;
         overflow: hidden;
         flex-shrink: 0;
-        border: 2px solid rgba(255, 255, 255, 0.06);
-        background: linear-gradient(135deg, var(--accent), var(--accent-2));
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 700;
-        font-size: 28px;
-        color: #081123;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      }
+
+      .avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
 
       h1 {
-        font-family: Kanit, Montserrat, sans-serif;
+        font-family: Kanit, sans-serif;
         margin: 0;
-        font-size: 28px
+        font-size: 24px;
       }
 
       p.lead {
         color: var(--muted);
-        margin: 6px 0 0;
-        font-size: 14px
+        font-size: 14px;
+        margin: 4px 0 0;
       }
 
-      /* Layout */
       .grid {
-        display: grid;
-        grid-template-columns: 320px 1fr;
-        gap: 24px;
-        align-items: start
+        display: flex;
+        gap: 20px;
+        align-items: start;
       }
 
-      /* Sidebar card */
-      .card {
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
-        border-radius: 14px;
-        padding: 18px;
-        border: 1px solid rgba(255, 255, 255, 0.04);
-        box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
-
-     /* For Polaroid Alignment */
+      .sidebar {
+        flex: 0 0 300px;
         display: flex;
         flex-direction: column;
-        align-items: center;
-}
+        gap: 20px;
+      }
 
+      .card {
+        background: var(--card-bg);
+        border-radius: 10px;
+        padding: 16px;
       }
 
       .profile-photo {
         width: 100%;
-        height: 220px;
-        border-radius: 12px;
-        overflow: hidden;
+        height: 200px;
+        border-radius: 8px;
         background-size: cover;
         background-position: center;
-        border: 1px solid rgba(255, 255, 255, 0.03)
       }
 
       .meta {
         display: flex;
         flex-direction: column;
-        gap: 8px;
-        margin-top: 12px
+        gap: 6px;
+        margin-top: 12px;
       }
 
       .meta .row {
         display: flex;
         justify-content: space-between;
         font-size: 13px;
-        color: var(--muted)
+        color: var(--muted);
       }
 
-      /* Main content */
-      .main .section {
-        margin-bottom: 20px
-      }
-
-      .section h2 {
-        margin: 0 0 10px;
-        font-size: 18px;
-        font-family: Kanit
-      }
-
-      .about-text {
-        color: #dfe9f8;
-        line-height: 1.6
-      }
-
-      /* Interests badges */
       .badges {
         display: flex;
         flex-wrap: wrap;
-        gap: 10px
+        gap: 8px;
+        margin-top: 6px;
       }
 
       .badge {
-        background: var(--glass);
-        padding: 8px 12px;
-        border-radius: 999px;
-        font-size: 13px;
-        color: var(--muted);
-        border: 1px solid rgba(255, 255, 255, 0.02)
+        background: var(--accent);
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 12px;
+        color: #fff;
       }
 
-      /* Favorites list */
+      .polaroid-card {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .polaroid-vertical {
+        background: #fff;
+        border-radius: 8px;
+        overflow: hidden;
+        text-align: center;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .polaroid-vertical img {
+        width: 100%;
+        height: auto;
+      }
+
+      .caption {
+        padding: 6px;
+        font-size: 12px;
+        color: #333;
+      }
+
+      main {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      h2 {
+        margin-top: 0;
+        font-family: Kanit, sans-serif;
+        font-size: 18px;
+      }
+
+      .about-text {
+        line-height: 1.5;
+      }
+
       .fav-list {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px
+        gap: 10px;
       }
 
       .fav-item {
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.015), rgba(255, 255, 255, 0.01));
+        background: #333;
         padding: 10px;
-        border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.03);
-        font-size: 13px
+        border-radius: 8px;
+        font-size: 13px;
       }
 
-      /* Gallery */
       .gallery {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 8px
+        gap: 8px;
       }
 
       .gallery img {
         width: 100%;
         height: 90px;
         object-fit: cover;
-        border-radius: 8px
+        border-radius: 6px;
       }
 
-      /* Contact */
       .contact-form {
-        display: grid;
-        gap: 8px
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
       }
 
       .contact-form input,
       .contact-form textarea {
-        background: transparent;
-        border: 1px solid rgba(255, 255, 255, 0.04);
-        padding: 10px;
-        border-radius: 8px;
-        color: inherit
+        background: #333;
+        border: 1px solid #444;
+        padding: 8px;
+        border-radius: 6px;
+        color: #fff;
       }
 
       .btn {
-        display: inline-block;
-        padding: 10px 16px;
-        border-radius: 10px;
-        background: linear-gradient(90deg, var(--accent), var(--accent-2));
-        color: #071028;
+        padding: 8px 14px;
+        border-radius: 6px;
+        background: var(--accent);
         border: none;
+        color: #fff;
         font-weight: 700;
-        cursor: pointer
+        cursor: pointer;
       }
 
-      /* Footer */
       footer {
-        margin-top: 30px;
+        text-align: center;
         color: var(--muted);
         font-size: 13px;
-        text-align: center
+        margin-top: 20px;
       }
 
-      /* small screens */
-      @media (max-width:880px) {
+      @media(max-width: 880px) {
         .grid {
-          grid-template-columns: 1fr
-        }
-
-        .profile-photo {
-          height: 180px
+          flex-direction: column;
         }
 
         .gallery {
-          grid-template-columns: repeat(2, 1fr)
+          grid-template-columns: repeat(2, 1fr);
         }
-      } 
-  /* Polaroid Style */
-.polaroid {
-  width: 180px;
-  padding: 10px 10px 25px 10px;
-  background: white;
-  color: #333;
-  border-radius: 8px;
-  box-shadow: 4px 6px 18px rgba(0, 0, 0, 0.5);
-  text-align: center;
-  margin: 16px auto 0 auto;
-  transform: rotate(-2deg);
-  transition: transform 0.3s;
-}
 
-.polaroid:hover {
-  transform: rotate(0deg) scale(1.05);
-}
-
-.polaroid img {
-  width: 100%;
-  display: block;
-  border-radius: 4px;
-}
-
-.polaroid .caption {
-  margin-top: 6px;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--muted);
-}
-
+        .profile-photo {
+          height: 180px;
+        }
+      }
     </style>
   </head>
   <body>
     <div class="container">
       <header>
-        <div class="logo">
-          <div class="avatar">
-            <img src="images/avatar.jpg" alt="Icon" style="width: 100%; height: 100%; border-radius: 18px;"> 
-            </div>
-          <div>
-            <h1>Saki's Anime Themed About Me</h1>
-            <p class="lead">A small, anime-styled corner of the web that tells my story ✦</p>
-          </div>
+        <div class="avatar">
+          <img src="images/avatar.jpg" alt="Avatar">
+        </div>
+        <div>
+          <h1>Saki's Anime Themed About Me</h1>
+          <p class="lead">A small, anime-styled corner of the web that tells my story ✦</p>
         </div>
       </header>
       <div class="grid">
         <!-- SIDEBAR -->
-        <aside class="card">
-          <!-- Replace the URL below with your wallpaper or profile image -->
-          <div class="profile-photo" style="background-image:url('images/photolarge.jpg');"></div>
-          <div class="meta">
-            <div style="display:flex;align-items:center;justify-content:space-between;">
-              <div>
-                <div style="font-weight:700;font-size:16px">Your Name</div>
-                <div style="font-size:13px;color:var(--muted)">Player · Artist · Dreamer</div>
+        <div class="sidebar">
+          <aside class="card">
+            <div class="profile-photo" style="background-image:url('images/photolarge.jpg');"></div>
+            <div class="meta">
+              <div style="display:flex;justify-content:space-between;">
+                <div>
+                  <div style="font-weight:700;font-size:16px">Your Name</div>
+                  <div style="font-size:13px;color:var(--muted)">Player · Artist · Dreamer</div>
+                </div>
+                <div style="text-align:right;color:var(--muted);font-size:13px">Age 16 <br> July, 21st </div>
               </div>
-              <div style="text-align:right;color:var(--muted);font-size:13px"> Age 16 <br> July, 21st. </div>
+              <div class="row">
+                <span>Favorite Anime</span>
+                <strong>Darling in the FranXX</strong>
+              </div>
+              <div class="row">
+                <span>Pronouns</span>
+                <strong>He/Him</strong>
+              </div>
+              <div class="row">
+                <span>Skills</span>
+                <strong>Drawing · Pixel Art</strong>
+              </div>
             </div>
-            <div class="row">
-              <span>Favorite Anime</span>
-              <strong>Darling in the FranXX</strong>
-            </div>
-            <div class="row">
-              <span>Pronouns</span>
-              <strong>He/Him</strong>
-            </div>
-            <div class="row">
-              <span>Skills</span>
-              <strong>Drawing · Pixel Art</strong>
-            </div>
-          </div>
-          <hr style="margin:12px 0;border:none;border-top:1px solid rgba(255,255,255,0.03)">
-          <div>
+            <hr style="margin:12px 0;border:none;border-top:1px solid #444">
             <h3 style="margin:0 0 8px;font-size:15px">Interests</h3>
             <div class="badges">
               <span class="badge">Anime</span>
@@ -326,16 +286,17 @@
               <span class="badge">Cosplay</span>
               <span class="badge">Foxes</span>
             </div>
-          </div>
-        <!-- Polaroid Photo -->
-          <div class="polaroid">
-          <img src="images/polaroid.png" alt="Polaroid Photo">
-          <div class="caption">Mau.</div>
+          </aside>
+          <!-- POLAROID BELOW INTERESTS -->
+          <aside class="polaroid-card">
+            <div class="polaroid-vertical">
+              <img src="ihttps://i.imgur.com/vLuaSXW.png" alt="Polaroid Photo">
+              <div class="caption">My Polaroid</div>
+            </div>
+          </aside>
         </div>
-
-        </aside>
         <!-- MAIN -->
-        <main class="main">
+        <main>
           <section class="card section about">
             <h2>About Me</h2>
             <p class="about-text">Hi! I'm <strong>Your Name</strong> — I make pixel art, watch too much anime, and write small stories inspired by my favorite shows. I love colorful sunsets, lo-fi beats, and characters with messy hair. This site is a tiny anime shrine where I share who I am through images, lists, and small bits of writing. </p>
@@ -345,19 +306,19 @@
             <div class="fav-list">
               <div class="fav-item">
                 <strong>Anime:</strong>
-                <br> Your Top Anime
+                <br>Your Top Anime
               </div>
               <div class="fav-item">
                 <strong>Manga:</strong>
-                <br> Your Top Manga
+                <br>Your Top Manga
               </div>
               <div class="fav-item">
                 <strong>Song:</strong>
-                <br> Favorite Track
+                <br>Favorite Track
               </div>
               <div class="fav-item">
                 <strong>Food:</strong>
-                <br> Ramen
+                <br>Ramen
               </div>
             </div>
           </section>
@@ -387,12 +348,7 @@
           </section>
         </main>
       </div>
-      <footer> Meowing For Clout. </footer>
+      <footer>Meowing For Clout.</footer>
     </div>
   </body>
 </html>
-
-
-
-
-
